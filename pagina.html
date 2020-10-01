@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="contenido">
+    <button class="btn btn-danger w-100" onclick="mostrarValores()">mostrar</button>
+    </div>
+
+
+    
+
+    <script>
+        var contenido = document.querySelector('#contenido')
+
+
+        function mostrarValores(){
+            fetch('http://localhost:3000/damelosvalores')
+            .then(res => (res.json()))
+            .then(dato =>{
+                console.log(dato)
+
+                contenido.innerHTML = `<h1>${dato[0].id}<h1>
+                <h2>${dato[0].nombre}<h2>
+                <h3>${dato[0].precio}<h3>`
+
+            })
+        }
+
+        
+    </script>
+
+</body>
+</html>
