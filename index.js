@@ -25,6 +25,10 @@ mysqlConexion.connect((err)=>{
     console.log('error')
 });
 
+
+// deberia refactorizarlo, minimo usar try/catch 
+
+
 //creamos una base de datos
 app.get('crearBD', (req, res) =>{
     let sql = 'CREATE DATABASE rollsushi';
